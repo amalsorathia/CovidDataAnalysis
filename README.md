@@ -5,3 +5,6 @@ Calculate the number of fully vaccinated people for the given population of that
 - zipcode as primary key
 
 use strategy pattern for avg market value and avg livable area -> create interface for average 
+
+amal - 3.2, 3.3, additional feature
+izhak - avg market value, avg livable era, total market value
