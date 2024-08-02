@@ -1,6 +1,8 @@
 package edu.upenn.cit594.studenttests;
 
+import edu.upenn.cit594.datamanagement.PopulationDataReader;
 import edu.upenn.cit594.datamanagement.PropertyDataReader;
+import edu.upenn.cit594.util.PopulationData;
 import edu.upenn.cit594.util.PropertyData;
 import org.junit.Before;
 import org.junit.Test;
@@ -93,5 +95,25 @@ public class PropertyDataReaderTests {
         assertEquals(500000.0, reader.parseDoubleOrZero("500000"), 0.01);
         assertEquals(0.0, reader.parseDoubleOrZero("invalid"), 0.01);
         assertEquals(0.0, reader.parseDoubleOrZero(null), 0.01);
+    }
+    
+    @Test
+    public void testData() throws IOException {
+        PropertyDataReader reader = new PropertyDataReader("properties.csv");
+
+        List<PropertyData> data = reader.readPropertyData();
+        System.out.println(data.getFirst().getZipCode());
+    }
+    
+    @Test
+    public void testMultiColumnFile() throws IOException {
+    	PropertyDataReader reader = new PropertyDataReader("properties.csv");
+        List<PropertyData> data = reader.readPropertyData();
+        
+        // Test first value with quotes
+        PropertyData first = data.get(0);
+        assertEquals("19131", first.getZipCode());
+        assertEquals(44800.0, first.getMarketValue(), 0.01);
+        assertEquals(1080.0, first.getTotalLivableArea(), 0.01);
     }
 }
