@@ -2,29 +2,13 @@ package edu.upenn.cit594.processor;
 
 public class DataProcessor {
 
-    public int getTotalPopulation(ArrayList populationData) {
-		HashMap<Integer, Integer> sumOfPopulation = new HashMap<Integer, Integer>();
-		
-		int totalSum = 0;
-	
-		return getTotalSum();
-		
+   public int getTotalPopulation(ArrayList populationData) {
+	int totalSum = 0;
+	for (PopulationData data: populationData) {
+		totalSum += data.getPopulation();}
+	return totalSum;
 	}
-	
-	private int getTotalSum(int totalSum, HashMap<Integer, Integer> sumOfPopulation) {
-		
-		
-		
-		
-		
-		return zipCode;
-		
-		
-		
-		
-		
-		
-	}
+
 
 
 
