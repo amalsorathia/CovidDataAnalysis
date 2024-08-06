@@ -2,7 +2,7 @@ package edu.upenn.cit594.ui;
 
 public class UserInterface {
 
-  publicDisplayMenu(){
+  public void displayMenu(){
    System.out.println("Click 0. Exit the program.");
    System.out.println("Clicl 1. Show the available actions").
    System.out.println("Click 2. Show the total population for all ZIP Codes").
